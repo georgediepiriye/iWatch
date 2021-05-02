@@ -17,11 +17,10 @@
           <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
           <li><a href="#">Orders</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">A brand</a></li>
-              <li><a href="#">A brand</a></li>
-              <li><a href="#">A brand</a></li>
+              <li><a href="#">Male</a></li>
+              <li><a href="#">Female</a></li>
             </ul>
           </li>
         </ul>
