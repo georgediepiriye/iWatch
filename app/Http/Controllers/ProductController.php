@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Session;
 
 
 use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -22,6 +24,7 @@ class ProductController extends Controller
 
     }
 
+//function to add item to cart
     public function addToCart(Request $req){
         if($req->session()->has('user')){
             $cart = new Cart();
@@ -34,5 +37,12 @@ class ProductController extends Controller
             return redirect('login?error=addtocart');
         }
         
+    }
+
+    //function to get number of items in cart added by the user
+    public static function cartItem(){
+        $user_id = Session::get('user')['id'];
+        return Cart::where('user_id',$user_id)->count();
+
     }
 }
