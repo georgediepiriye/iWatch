@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <div class="container custom-login">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
@@ -15,10 +16,16 @@
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Login</button>
               </form>
+              @if ($_GET['error']='wrongcredentials')
+
+               <h5  style="color :red; "> Wrong Email or Password </h5>
+    
+              @endif
         </div>
 
     </div>
 
 </div>
+
     
 @endsection

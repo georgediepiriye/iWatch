@@ -10,7 +10,12 @@
             <h3>{{ $product['name'] }}</h2>
             <h4>Price: {{ $product['price'] }}</h4>
             <h5>Category: {{ $product['category'] }}</h5><br><br>
-            <button class="btn btn-primary">Add to Cart</button><br><br>
+            <form action="/add_to_cart" method="post">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                <button class="btn btn-primary" name="add_to_cart">Add to Cart</button><br><br>
+            </form>
+            
             <button class="btn btn-success">Buy Now</button><br><br>
 
         </div>
