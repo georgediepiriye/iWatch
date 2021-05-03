@@ -16,11 +16,7 @@
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Login</button>
               </form>
-              @if ($_GET['error']='wrongcredentials')
-
-               <h5  style="color :red; "> Wrong Email or Password </h5>
-    
-              @endif
+             
         </div>
 
     </div>

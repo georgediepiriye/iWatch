@@ -1,8 +1,5 @@
 @extends('master')
 @section('content')
-@if ($_GET['status']='wrongcredentials')
-<h5  style="color :green; ">Wrist watch added to Cart</h5>
-@endif
 <div class="custom-product">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
