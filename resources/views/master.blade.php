@@ -46,6 +46,11 @@
 }
 .detail-img{
     height: 300px;
-}   
+} 
+.cart-list-divider{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}  
 </style>
 </html>
