@@ -21,6 +21,11 @@ class UserAuth
            return redirect('/');
 
         }
+
+        if($request->path()==='order' && $request->session()->has('user')===false){
+            return redirect('/login');
+ 
+         }
         return $next($request);
     }
 }
