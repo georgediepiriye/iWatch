@@ -96,6 +96,7 @@ class ProductController extends Controller
         return redirect('/');   
     }
 
+    //gets all products in orders table made by user
     public function myorders(){
         $user_id = Session::get('user')['id'];
          $products = DB::table('orders')

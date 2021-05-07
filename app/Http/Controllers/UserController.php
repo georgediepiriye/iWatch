@@ -24,4 +24,27 @@ class UserController extends Controller
 
        
     }
+
+    public function register(Request $req){
+        if(empty($req->name) || empty($req->email) || empty($req->password) || empty($req->retype_password)){
+            return redirect('/register?error=emptyfield');
+            
+        }else{
+            if($req->password!==$req->retype_password){
+                return redirect('/register?error=passwordsdontmatch');
+
+            }else{
+                $user = new User();
+                $user->name = $req->name;
+                $user->email = $req->email;
+                $user->password = Hash::make($req->password);
+                $user->save();
+                return redirect('/login');
+
+            }
+        }
+  
+
+
+    }
 }

@@ -26,6 +26,8 @@ Route::get('/logout', function () {
     return redirect('/login');
     
 });
+
+Route::view('/register','register');
 Route::post('/login',[UserController::class,'login']);
 Route::get('/',[ProductController::class,'index']);
 Route::get('detail/{id}',[ProductController::class,'detail']);
@@ -35,6 +37,8 @@ Route::get('delete_from_cart/{id}',[ProductController::class,'deleteFromCart']);
 Route::get('/order',[ProductController::class,'order']);
 Route::post('/orderpay',[ProductController::class,'orderpay']);
 Route::get('/myorders',[ProductController::class,'myorders']);
+Route::post('/register',[UserController::class,'register']);
+
 
 
 
