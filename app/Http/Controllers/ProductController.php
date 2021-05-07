@@ -92,12 +92,17 @@ class ProductController extends Controller
             $order->payment_status= 'pending';
             $order->save();
             Cart::where('user_id',$user_id)->delete();
-
-
         }
-        return redirect('/');
+        return redirect('/');   
+    }
 
-      
-        
+    public function myorders(){
+        $user_id = Session::get('user')['id'];
+         $products = DB::table('orders')
+        ->join('products','orders.product_id', '=' ,'products.id')
+        ->where('orders.user_id',$user_id)
+        ->get();
+        return view('/myorders',['products'=>$products]);
+
     }
 }

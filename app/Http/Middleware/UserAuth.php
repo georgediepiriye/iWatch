@@ -22,7 +22,7 @@ class UserAuth
 
         }
 
-        if($request->path()==='order' && $request->session()->has('user')===false){
+        if($request->path()==='myorders' && $request->session()->has('user')===false){
             return redirect('/login');
  
          }
